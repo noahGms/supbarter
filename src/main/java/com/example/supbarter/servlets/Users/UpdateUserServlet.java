@@ -1,7 +1,6 @@
 package com.example.supbarter.servlets.Users;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.example.supbarter.dao.IUserDao;
+import com.example.supbarter.dao.interfaces.IUserDao;
 import com.example.supbarter.entities.User;
 
 import javax.ejb.EJB;

@@ -1,4 +1,4 @@
-package com.example.supbarter.dao;
+package com.example.supbarter.dao.interfaces;
 
 import com.example.supbarter.entities.User;
 
