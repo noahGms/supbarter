@@ -75,7 +75,7 @@ public class User implements Serializable {
 	}
 
 	public void setPassword(String password) {
-		this.password = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+		this.password = password;
 	}
 
 	public boolean checkPassword(String password) {

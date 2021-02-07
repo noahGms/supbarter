@@ -1,5 +1,6 @@
 package com.example.supbarter.dao;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.example.supbarter.entities.User;
 
 import javax.ejb.Stateless;
@@ -46,5 +47,18 @@ public class UserDao implements IUserDao {
 	@Override
 	public void create(User user) {
 		em.persist(user);
+	}
+
+	@Override
+	public void update(Long id, User incoming) {
+		User user = em.find(User.class, id);
+		user.setEmail(incoming.getEmail());
+		user.setFirstname(incoming.getFirstname());
+		user.setLastname(incoming.getLastname());
+		user.setZipcode(incoming.getZipcode());
+		if (!incoming.getPassword().startsWith("$2a$")) {
+			user.setPassword(BCrypt.withDefaults().hashToString(12, incoming.getPassword().toCharArray()));
+		}
+		em.merge(user);
 	}
 }

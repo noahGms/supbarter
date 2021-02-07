@@ -16,6 +16,7 @@
 <a href="login">Login servlet</a>
 <a href="users">User servlet</a>
 <c:if test="${sessionScope.isLogin}">
+    <a href="update-user">Update my user</a>
     <form action="logout" method="post">
         <button type="submit">Logout</button>
     </form>

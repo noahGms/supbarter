@@ -11,4 +11,5 @@ public interface IUserDao {
 	User findById(Long id);
 	User findByField(String[] field);
 	void create(User user);
+	void update(Long id, User incoming);
 }

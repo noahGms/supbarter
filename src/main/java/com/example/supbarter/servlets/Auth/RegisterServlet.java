@@ -1,5 +1,6 @@
 package com.example.supbarter.servlets.Auth;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.example.supbarter.dao.IUserDao;
 import com.example.supbarter.entities.User;
 
@@ -51,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
 		newUser.setUsername(username);
 		newUser.setFirstname(firstname);
 		newUser.setLastname(lastname);
-		newUser.setPassword(password);
+		newUser.setPassword(BCrypt.withDefaults().hashToString(12, password.toCharArray()));
 		newUser.setLastname(lastname);
 		newUser.setZipcode(Integer.parseInt(zipCode));
 
