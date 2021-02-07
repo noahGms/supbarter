@@ -6,16 +6,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(uniqueConstraints=@UniqueConstraint(columnNames="email"))
+@Table(uniqueConstraints=@UniqueConstraint(columnNames="username"))
 public class User implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	@Column(unique = true)
+	@Column
 	private String email;
 
-	@Column
+	@Column(unique = true)
 	private String username;
 
 	@Column

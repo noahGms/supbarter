@@ -16,8 +16,8 @@
     <c:out value="${error}"></c:out>
 <form action="login" method="post">
     <div>
-        <label for="email">Email</label>
-        <input type="text" name="email" placeholder="Email address">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Username">
     </div>
     <div>
         <label for="password">Password</label>

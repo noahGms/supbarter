@@ -23,18 +23,18 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String email = req.getParameter("email");
+		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
 		// check if form send all values
-		if (email.equals("") && password.equals("")) {
+		if (username.equals("") && password.equals("")) {
 			req.setAttribute("error", "user or password not provided");
 			req.getRequestDispatcher("/Auth/login.jsp").forward(req, resp);
 			return;
 		}
 
-		// check if user exist with email
-		User user = userDao.findByField(new String[]{"email", email});
+		// check if user exist with username
+		User user = userDao.findByField(new String[]{"username", username});
 		if (user == null) {
 			req.setAttribute("error", "user not found");
 			req.getRequestDispatcher("/Auth/login.jsp").forward(req, resp);

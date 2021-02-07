@@ -39,6 +39,14 @@ public class RegisterServlet extends HttpServlet {
 			return;
 		}
 
+		// check if user exist with username
+		User user = userDao.findByField(new String[]{"username", username});
+		if (user != null) {
+			req.setAttribute("error", "username already take");
+			req.getRequestDispatcher("/Auth/register.jsp").forward(req, resp);
+			return;
+		}
+
 		// check if passwordConfirmation equals to password
 		if (!password.equals(passwordConfirmation)) {
 			req.setAttribute("error", "passwords not match");
