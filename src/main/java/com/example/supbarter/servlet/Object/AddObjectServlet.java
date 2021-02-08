@@ -36,6 +36,7 @@ public class AddObjectServlet extends HttpServlet {
 
 		if (title.isEmpty() || description.isEmpty() || price.isEmpty() || picture.isEmpty() || type.isEmpty()) {
 			req.setAttribute("error", "information missing");
+			req.setAttribute("objectTypes", objectTypeDao.getAll());
 			req.getRequestDispatcher("/Object/add.jsp").forward(req, resp);
 			return;
 		}
@@ -43,6 +44,7 @@ public class AddObjectServlet extends HttpServlet {
 		ObjectType objectType = objectTypeDao.findById(Long.parseLong(type));
 		if (objectType == null) {
 			req.setAttribute("error", "object type not found");
+			req.setAttribute("objectTypes", objectTypeDao.getAll());
 			req.getRequestDispatcher("/Object/add.jsp").forward(req, resp);
 			return;
 		}

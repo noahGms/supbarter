@@ -36,6 +36,7 @@ public class UpdateObjectTypeServlet extends HttpServlet {
 		ObjectType objectType = objectTypeDao.findById(id);
 		if (objectType == null) {
 			req.setAttribute("error", "object type not found");
+			req.setAttribute("objectType", objectType);
 			req.getRequestDispatcher("/ObjectType/index.jsp").forward(req, resp);
 			return;
 		}
@@ -43,6 +44,7 @@ public class UpdateObjectTypeServlet extends HttpServlet {
 		// check if name is empty
 		if (name.isEmpty()) {
 			req.setAttribute("error", "name is empty");
+			req.setAttribute("objectType", objectType);
 			req.getRequestDispatcher("/ObjectType/update.jsp").forward(req, resp);
 			return;
 		}

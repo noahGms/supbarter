@@ -17,6 +17,7 @@ public class DeleteObjectTypeServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Long id = Long.parseLong(req.getParameter("id"));
+		resp.getWriter().println(id);
 
 		// remove object type
 		objectTypeDao.remove(id);

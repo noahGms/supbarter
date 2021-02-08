@@ -14,7 +14,7 @@ public class ObjectType implements Serializable {
 	@Column
 	private String name;
 
-	@OneToMany( targetEntity=Object.class, mappedBy="type" )
+	@OneToMany( targetEntity=Object.class, mappedBy="type")
 	private List<Object> objects = new ArrayList<>();
 
 	public Long getId() {

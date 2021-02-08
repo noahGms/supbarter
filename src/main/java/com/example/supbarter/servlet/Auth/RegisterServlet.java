@@ -67,6 +67,6 @@ public class RegisterServlet extends HttpServlet {
 		userDao.create(newUser);
 
 		// return to login page
-		req.getRequestDispatcher("/Auth/login.jsp").forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/login");
 	}
 }

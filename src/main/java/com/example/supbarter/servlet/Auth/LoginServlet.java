@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
 		// check password
 		if (!user.checkPassword(password)) {
-			req.setAttribute("error", "passwords not match");
+			req.setAttribute("error", "invalid credentials");
 			req.getRequestDispatcher("/Auth/login.jsp").forward(req, resp);
 			return;
 		}
@@ -53,6 +53,6 @@ public class LoginServlet extends HttpServlet {
 		req.getSession().setAttribute("currentUser", user);
 
 		// return to index page
-		req.getRequestDispatcher("/index.jsp").forward(req, resp);
+		resp.sendRedirect(req.getContextPath());
 	}
 }
