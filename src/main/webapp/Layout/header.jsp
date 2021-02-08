@@ -30,6 +30,10 @@
                 </ul>
 
                 <div class="d-flex justify-content-between">
+                    <form class="d-flex" action="search" method="post">
+                        <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+                        <input class="form-control me-2" type="search" name="searchText" placeholder="Search" aria-label="Search">
+                    </form>
                     <c:if test="${!sessionScope.isLogin}">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -41,10 +45,6 @@
                         </ul>
                     </c:if>
                     <c:if test="${sessionScope.isLogin}">
-                        <form class="d-flex" action="">
-                            <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
                         <div class="d-flex ml-3">
                             <a class="btn btn-outline-dark btn-small me-2" href="${sessionScope.contextPath}/update-user">My profile</a>
                             <form action="logout" method="post">

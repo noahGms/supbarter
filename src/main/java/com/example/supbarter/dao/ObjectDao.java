@@ -14,8 +14,18 @@ public class ObjectDao implements IObjectDao {
 	EntityManager em;
 
 	@Override
+	public Long count() {
+		return (Long) em.createQuery("SELECT count(*) FROM Object ").getSingleResult();
+	}
+
+	@Override
 	public List<Object> getAll() {
 		return em.createQuery("SELECT o from Object o").getResultList();
+	}
+
+	@Override
+	public List<Object> getWithLimit(Integer limit) {
+		return em.createQuery("SELECT o from Object o order by id desc").setMaxResults(limit).getResultList();
 	}
 
 	@Override
@@ -43,5 +53,11 @@ public class ObjectDao implements IObjectDao {
 	public void remove(Long id) {
 		Object object = this.findById(id);
 		em.remove(object);
+	}
+
+	@Override
+	public List<Object> search(String text) {
+		String query = "SELECT o from Object o JOIN o.type t WHERE title LIKE '%" + text + "%' OR description LIKE '%" + text + "%' OR t.name LIKE '%" + text + "%'";
+		return em.createQuery(query).getResultList();
 	}
 }
