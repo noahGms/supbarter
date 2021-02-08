@@ -1,23 +1,35 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: noah
-  Date: 08/02/2021
-  Time: 11:27
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Update Object Type</title>
+    <title>SUPBARTER | UPDATE AN TYPE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Update object type ${objectType.id}</h1>
-<form action="" method="post">
-    <input type="hidden" name="id" value="${objectType.id}">
-    <label for="name">Name</label>
-    <input type="text" name="name" value="${objectType.name}" placeholder="name">
-    <button type="submit">Update</button>
-</form>
+<jsp:include page="../Layout/header.jsp"></jsp:include>
+<div style="margin-top: 100px;" class="container">
+    <h1 class="mb-3">Update type n°${objectType.id}</h1>
+
+    <form action="${sessionScope.contextPath}/update-object-types/${objectType.id}" method="post">
+        <div class="mb-3">
+            <input type="hidden" name="id" value="${objectType.id}">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" placeholder="Name" class="form-control" value="${objectType.name}">
+        </div>
+
+        <div class="mb-3 text-center">
+            <span class="fs-3 text-danger text-center">${error}</span
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary full">Update</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

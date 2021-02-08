@@ -3,23 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>SUPBARTER | HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
-<c:if test="${sessionScope.isLogin}">
-    <c:out value="${sessionScope.currentUser.email}"></c:out>
-</c:if>
-<br/>
-<a href="register">Register servlet</a>
-<a href="login">Login servlet</a>
-<a href="object-types">Object types servlet</a>
-<a href="objects">Object servlet</a>
-<c:if test="${sessionScope.isLogin}">
-    <a href="update-user">Update my user</a>
-    <form action="logout" method="post">
-        <button type="submit">Logout</button>
-    </form>
-</c:if>
+<jsp:include page="Layout/header.jsp"></jsp:include>
+<div class="container d-flex justify-content-center">
+    <h1 style="margin-top: 100px;">Welcome on SUPBARTER</h1>
+</div>
 </body>
 </html>
