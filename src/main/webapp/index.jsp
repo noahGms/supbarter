@@ -15,6 +15,7 @@
 <a href="register">Register servlet</a>
 <a href="login">Login servlet</a>
 <a href="users">User servlet</a>
+<a href="object-types">Object types servlet</a>
 <c:if test="${sessionScope.isLogin}">
     <a href="update-user">Update my user</a>
     <form action="logout" method="post">
