@@ -15,5 +15,17 @@
         <url-pattern>/add-objects</url-pattern>
         <url-pattern>/delete-objects</url-pattern>
         <url-pattern>/update-objects/*</url-pattern>
+        <url-pattern>/object-types</url-pattern>
+        <url-pattern>/update-object-types/*</url-pattern>
+        <url-pattern>/delete-object-types</url-pattern>
+        <url-pattern>/update-user</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>MainFilter</filter-name>
+        <filter-class>com.example.supbarter.filter.MainFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MainFilter</filter-name>
+        <url-pattern>*</url-pattern>
     </filter-mapping>
 </web-app>
