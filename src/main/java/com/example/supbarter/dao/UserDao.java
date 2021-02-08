@@ -20,6 +20,11 @@ public class UserDao implements IUserDao {
 	EntityManager em;
 
 	@Override
+	public Long count() {
+		return (Long) em.createQuery("SELECT count(*) FROM User").getSingleResult();
+	}
+
+	@Override
 	public List<User> getAll() {
 		return em.createQuery("SELECT u from User u").getResultList();
 	}

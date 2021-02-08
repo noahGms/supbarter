@@ -7,7 +7,10 @@ import java.util.List;
 
 @Local
 public interface IObjectDao {
+	Long count();
 	List<Object> getAll();
+	List<Object> getWithLimit(Integer limit);
+	List<Object> search(String text);
 	Object findById(Long id);
 	void create(Object object);
 	void update(Long id, Object incoming);

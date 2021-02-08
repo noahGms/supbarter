@@ -7,6 +7,7 @@ import java.util.List;
 
 @Local
 public interface IUserDao {
+	Long count();
 	List<User> getAll();
 	User findById(Long id);
 	User findByField(String[] field);

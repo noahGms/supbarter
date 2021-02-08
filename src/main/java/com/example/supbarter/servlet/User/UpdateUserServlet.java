@@ -66,6 +66,6 @@ public class UpdateUserServlet extends HttpServlet {
 		userDao.update(user.getId(), user);
 
 		// return to index page
-		req.getRequestDispatcher("/index.jsp").forward(req, resp);
+		resp.sendRedirect(req.getContextPath());
 	}
 }
