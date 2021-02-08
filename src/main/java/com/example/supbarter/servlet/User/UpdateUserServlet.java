@@ -1,7 +1,7 @@
-package com.example.supbarter.servlets.User;
+package com.example.supbarter.servlet.User;
 
-import com.example.supbarter.dao.interfaces.IUserDao;
-import com.example.supbarter.entities.User;
+import com.example.supbarter.dao.daoInterface.IUserDao;
+import com.example.supbarter.entity.User;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UpdateUserServlet", value="update-user")
+@WebServlet(name = "UpdateUserServlet", value="/update-user")
 public class UpdateUserServlet extends HttpServlet {
 	@EJB
 	IUserDao userDao;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/Users/update.jsp").forward(req, resp);
+		req.getRequestDispatcher("/User/update.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,21 +36,21 @@ public class UpdateUserServlet extends HttpServlet {
 			// if passwords, check if all password input are present
 			if (currentPassword.equals("") || newPassword.equals("") || newPasswordConfirmation.equals("")) {
 				req.setAttribute("error", "password information missing");
-				req.getRequestDispatcher("/Users/update.jsp").forward(req, resp);
+				req.getRequestDispatcher("/User/update.jsp").forward(req, resp);
 				return;
 			}
 
 			// check if currentPassword is good
 			if (!user.checkPassword(currentPassword)) {
 				req.setAttribute("error", "current password not match");
-				req.getRequestDispatcher("/Users/update.jsp").forward(req, resp);
+				req.getRequestDispatcher("/User/update.jsp").forward(req, resp);
 				return;
 			}
 
 			// check if newPassword equal to newPasswordConfirmation
 			if (!newPassword.equals(newPasswordConfirmation)) {
 				req.setAttribute("error", "new passwords not match");
-				req.getRequestDispatcher("/Users/update.jsp").forward(req, resp);
+				req.getRequestDispatcher("/User/update.jsp").forward(req, resp);
 				return;
 			}
 

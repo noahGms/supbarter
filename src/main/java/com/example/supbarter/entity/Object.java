@@ -1,4 +1,4 @@
-package com.example.supbarter.entities;
+package com.example.supbarter.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

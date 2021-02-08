@@ -1,8 +1,8 @@
 package com.example.supbarter.dao;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.example.supbarter.dao.interfaces.IUserDao;
-import com.example.supbarter.entities.User;
+import com.example.supbarter.dao.daoInterface.IUserDao;
+import com.example.supbarter.entity.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

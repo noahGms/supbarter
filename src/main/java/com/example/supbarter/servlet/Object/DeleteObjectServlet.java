@@ -1,8 +1,8 @@
-package com.example.supbarter.servlets.Object;
+package com.example.supbarter.servlet.Object;
 
-import com.example.supbarter.dao.interfaces.IObjectDao;
-import com.example.supbarter.entities.Object;
-import com.example.supbarter.entities.User;
+import com.example.supbarter.dao.daoInterface.IObjectDao;
+import com.example.supbarter.entity.Object;
+import com.example.supbarter.entity.User;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

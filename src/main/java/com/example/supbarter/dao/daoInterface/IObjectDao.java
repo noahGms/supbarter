@@ -1,6 +1,6 @@
-package com.example.supbarter.dao.interfaces;
+package com.example.supbarter.dao.daoInterface;
 
-import com.example.supbarter.entities.Object;
+import com.example.supbarter.entity.Object;
 
 import javax.ejb.Local;
 import java.util.List;

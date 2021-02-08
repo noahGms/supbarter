@@ -1,7 +1,7 @@
 package com.example.supbarter.dao;
 
-import com.example.supbarter.dao.interfaces.IObjectTypeDao;
-import com.example.supbarter.entities.ObjectType;
+import com.example.supbarter.dao.daoInterface.IObjectTypeDao;
+import com.example.supbarter.entity.ObjectType;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

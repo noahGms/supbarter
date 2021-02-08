@@ -1,11 +1,10 @@
-package com.example.supbarter.filters;
+package com.example.supbarter.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionAttributeListener;
 import java.io.IOException;
 
 @WebFilter(filterName = "AuthenticationFilter")

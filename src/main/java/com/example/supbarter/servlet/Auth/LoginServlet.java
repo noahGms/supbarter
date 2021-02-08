@@ -1,7 +1,7 @@
-package com.example.supbarter.servlets.Auth;
+package com.example.supbarter.servlet.Auth;
 
-import com.example.supbarter.dao.interfaces.IUserDao;
-import com.example.supbarter.entities.User;
+import com.example.supbarter.dao.daoInterface.IUserDao;
+import com.example.supbarter.entity.User;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

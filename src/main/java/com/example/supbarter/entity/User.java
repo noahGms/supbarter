@@ -1,4 +1,4 @@
-package com.example.supbarter.entities;
+package com.example.supbarter.entity;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
