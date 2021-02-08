@@ -1,4 +1,4 @@
-package com.example.supbarter.servlets.Users;
+package com.example.supbarter.servlets.User;
 
 import com.example.supbarter.dao.interfaces.IUserDao;
 import com.example.supbarter.entities.User;

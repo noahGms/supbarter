@@ -11,10 +11,8 @@
     <c:out value="${sessionScope.currentUser.email}"></c:out>
 </c:if>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 <a href="register">Register servlet</a>
 <a href="login">Login servlet</a>
-<a href="users">User servlet</a>
 <a href="object-types">Object types servlet</a>
 <a href="objects">Object servlet</a>
 <c:if test="${sessionScope.isLogin}">
