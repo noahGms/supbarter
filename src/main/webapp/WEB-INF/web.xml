@@ -10,5 +10,8 @@
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/users</url-pattern>
+        <url-pattern>/add-objects</url-pattern>
+        <url-pattern>/delete-objects</url-pattern>
+        <url-pattern>/update-objects/*</url-pattern>
     </filter-mapping>
 </web-app>

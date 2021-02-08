@@ -1,11 +1,9 @@
 package com.example.supbarter.entities;
 
-import javax.ejb.EJB;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class ObjectType implements Serializable {
@@ -15,6 +13,9 @@ public class ObjectType implements Serializable {
 
 	@Column
 	private String name;
+
+	@OneToMany( targetEntity=Object.class, mappedBy="type" )
+	private List<Object> objects = new ArrayList<>();
 
 	public Long getId() {
 		return id;

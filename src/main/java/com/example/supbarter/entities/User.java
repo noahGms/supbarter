@@ -4,6 +4,8 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(uniqueConstraints=@UniqueConstraint(columnNames="username"))
@@ -29,6 +31,9 @@ public class User implements Serializable {
 
 	@Column
 	private Integer zipcode;
+
+	@OneToMany( targetEntity=Object.class, mappedBy="user" )
+	private List<Object> objects = new ArrayList<>();
 
 	public Long getId() {
 		return id;
