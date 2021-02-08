@@ -29,6 +29,11 @@ public class ObjectDao implements IObjectDao {
 	}
 
 	@Override
+	public List<Object> getByUserId(Long id) {
+		return em.createQuery("SELECT o from Object o WHERE o.user = " + id).getResultList();
+	}
+
+	@Override
 	public Object findById(Long id) {
 		return em.find(Object.class, id);
 	}

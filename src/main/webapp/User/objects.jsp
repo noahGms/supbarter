@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SUPBARTER | OBJECTS</title>
+    <title>SUPBARTER | MY OBJECTS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="../Layout/header.jsp"></jsp:include>
 <div style="margin-top: 100px;" class="container">
-    <h1 class="mb-3">Objects
+    <h1 class="mb-3">My objects
         <c:if test="${sessionScope.isLogin}">
             <a href="add-objects" class="btn btn-primary">Add</a>
         </c:if>
@@ -41,6 +41,15 @@
                         </ul>
                         <div class="card-body">
                             <a href="show-objects/${object.id}">More details</a>
+                            <c:if test="${currentUser.id == object.user.id}">
+                                <form class="mt-3" action="delete-objects" method="post">
+                                    <input type="hidden" name="id" value="${object.id}">
+                                    <a href="update-objects/${object.id}" class="btn btn-outline-primary">Update</a>
+                                    <input type="submit" class="btn btn-outline-danger" value="Delete"
+                                           onclick="return confirm('Are you sure you want to delete this object?')"
+                                    />
+                                </form>
+                            </c:if>
                         </div>
                     </div>
                 </div>

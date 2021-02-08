@@ -50,7 +50,9 @@
                                 </div>
                                 <div class="col">
                                     <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        <input type="submit" class="btn btn-outline-danger" value="Delete"
+                                               onclick="return confirm('Are you sure you want to delete this object?')"
+                                        />
                                     </div>
                                 </div>
                             </div>

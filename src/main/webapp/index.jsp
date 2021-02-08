@@ -15,7 +15,7 @@
 <div class="container">
     <div class="d-flex justify-content-center">
         <h1 style="margin-top: 100px;">Welcome <c:if
-                test="${sessionScope.isLogin}">${sessionScope.currentUser.username}</c:if> on SUPBARTER</h1>
+                test="${sessionScope.isLogin}"><span class="text-capitalize">${sessionScope.currentUser.username}</span></c:if> on SUPBARTER</h1>
     </div>
     <div class="row mt-4">
         <div class="col">

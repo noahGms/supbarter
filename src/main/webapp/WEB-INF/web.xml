@@ -19,6 +19,7 @@
         <url-pattern>/update-object-types/*</url-pattern>
         <url-pattern>/delete-object-types</url-pattern>
         <url-pattern>/update-user</url-pattern>
+        <url-pattern>/my-objects</url-pattern>
     </filter-mapping>
     <filter>
         <filter-name>MainFilter</filter-name>

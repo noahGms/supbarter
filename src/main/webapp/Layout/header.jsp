@@ -46,6 +46,7 @@
                     </c:if>
                     <c:if test="${sessionScope.isLogin}">
                         <div class="d-flex ml-3">
+                            <a class="btn btn-outline-dark btn-small me-2" href="${sessionScope.contextPath}/my-objects">My objects</a>
                             <a class="btn btn-outline-dark btn-small me-2" href="${sessionScope.contextPath}/update-user">My profile</a>
                             <form action="logout" method="post">
                                 <button class="btn btn-small btn-outline-danger" type="submit">Logout</button>

@@ -11,6 +11,7 @@ public interface IObjectDao {
 	List<Object> getAll();
 	List<Object> getWithLimit(Integer limit);
 	List<Object> search(String text);
+	List<Object> getByUserId(Long id);
 	Object findById(Long id);
 	void create(Object object);
 	void update(Long id, Object incoming);
