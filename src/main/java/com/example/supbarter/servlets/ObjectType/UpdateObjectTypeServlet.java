@@ -36,7 +36,7 @@ public class UpdateObjectTypeServlet extends HttpServlet {
 		ObjectType objectType = objectTypeDao.findById(id);
 		if (objectType == null) {
 			req.setAttribute("error", "object type not found");
-			req.getRequestDispatcher("/ObjectType/list.jsp").forward(req, resp);
+			req.getRequestDispatcher("/ObjectType/index.jsp").forward(req, resp);
 			return;
 		}
 

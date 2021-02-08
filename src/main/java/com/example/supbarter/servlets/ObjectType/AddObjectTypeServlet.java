@@ -26,7 +26,7 @@ public class AddObjectTypeServlet extends HttpServlet {
 		// check if name is present
 		if (name.equals("")) {
 			req.setAttribute("error", "name missing");
-			req.getRequestDispatcher("/ObjectType/list.jsp").forward(req, resp);
+			req.getRequestDispatcher("/ObjectType/index.jsp").forward(req, resp);
 			return;
 		}
 
