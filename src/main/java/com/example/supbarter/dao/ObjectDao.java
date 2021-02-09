@@ -21,6 +21,11 @@ public class ObjectDao implements IObjectDao {
 	}
 
 	@Override
+	public Long countUserObjects(Long id) {
+		return (Long) em.createQuery("SELECT count(*) FROM Object WHERE user = " + id).getSingleResult();
+	}
+
+	@Override
 	public List<Object> getAll() {
 		return em.createQuery("SELECT o from Object o").setMaxResults(this.pageSize).getResultList();
 	}
@@ -37,7 +42,12 @@ public class ObjectDao implements IObjectDao {
 
 	@Override
 	public List<Object> getByUserId(Long id) {
-		return em.createQuery("SELECT o from Object o WHERE o.user = " + id).getResultList();
+		return em.createQuery("SELECT o from Object o WHERE o.user = " + id).setMaxResults(this.pageSize).getResultList();
+	}
+
+	@Override
+	public List<Object> getByUserIdWithPage(Long id, Integer page) {
+		return em.createQuery("SELECT o from Object o WHERE o.user = " + id).setFirstResult((page-1) * this.pageSize).setMaxResults(this.pageSize).getResultList();
 	}
 
 	@Override
