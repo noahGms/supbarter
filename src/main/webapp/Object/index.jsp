@@ -46,6 +46,15 @@
                 </div>
             </c:forEach>
         </div>
+        <div class="row mb-4">
+            <div class="col">
+                <form class="pagination justify-content-center" action="${sessionScope.contextPath}/objects" method="post">
+                    <c:forEach var="i" begin="1" end="${pageNumber}" step="1">
+                        <input type="submit" name="pageNumber" value="${i}" class="page-link">
+                    </c:forEach>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 </body>

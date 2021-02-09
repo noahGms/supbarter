@@ -13,6 +13,8 @@ public class ObjectDao implements IObjectDao {
 	@PersistenceContext
 	EntityManager em;
 
+	public static Integer pageSize = 10;
+
 	@Override
 	public Long count() {
 		return (Long) em.createQuery("SELECT count(*) FROM Object ").getSingleResult();
@@ -20,7 +22,12 @@ public class ObjectDao implements IObjectDao {
 
 	@Override
 	public List<Object> getAll() {
-		return em.createQuery("SELECT o from Object o").getResultList();
+		return em.createQuery("SELECT o from Object o").setMaxResults(this.pageSize).getResultList();
+	}
+
+	@Override
+	public List<Object> getAllWithPage(Integer page) {
+		return em.createQuery("SELECT o from Object o").setFirstResult((page-1) * this.pageSize).setMaxResults(this.pageSize).getResultList();
 	}
 
 	@Override

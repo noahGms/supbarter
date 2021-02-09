@@ -9,6 +9,7 @@ import java.util.List;
 public interface IObjectDao {
 	Long count();
 	List<Object> getAll();
+	List<Object> getAllWithPage(Integer page);
 	List<Object> getWithLimit(Integer limit);
 	List<Object> search(String text);
 	List<Object> getByUserId(Long id);
