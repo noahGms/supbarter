@@ -28,7 +28,7 @@ public class DeleteObjectServlet extends HttpServlet {
 		if (object.getUser().getId() != currentUser.getId()) {
 			req.setAttribute("error", "you can't delete this object");
 			req.setAttribute("objects", objectDao.getAll());
-			req.getRequestDispatcher("/Object/index.jsp").forward(req, resp);
+			req.getRequestDispatcher("/User/objects.jsp").forward(req, resp);
 			return;
 		}
 
